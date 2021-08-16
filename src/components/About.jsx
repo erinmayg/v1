@@ -10,7 +10,8 @@ function About() {
         working in Graphic Design and my hobby is to create digital art.
       </p>
 
-      <div>
+      <div className='skills'>
+        <div className='skills-content'>
         <h2>Skills</h2>
         <ul>
           <li>Frontend Dev</li>
@@ -18,9 +19,10 @@ function About() {
           <li>Graphic Design</li>
           <li>Digital Art</li>
         </ul>
+        </div>
       </div>
 
-      <div>
+      <div className='artwork'>
         <h2>See my paintings</h2>
       </div>
     </section>
