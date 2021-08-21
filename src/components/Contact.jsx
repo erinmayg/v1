@@ -10,9 +10,11 @@ function Contact() {
         in working with me?
       </p>
 
-      <a href='mailto:erinmayg@gmail.com'>
-        <span className='emphasis'>Let's talk.</span>
-      </a>
+      <div className='btn-wrapper'>
+        <a href='mailto:erinmayg@gmail.com'>
+          <span className='emphasis'>Let's talk.</span>
+        </a>
+      </div>
     </section>
   );
 }
