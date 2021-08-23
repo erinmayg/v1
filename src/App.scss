@@ -1,21 +1,21 @@
+$fontHead: 'Lexend Exa', sans-serif;
+$fontText: 'Roboto Mono', monospace;
+$bgColor: #1b191f;
+$lightgrey: #c4c4c4;
+$grey: #a8a8a8;
+$accent1: #b384ff;
+$accent2: #873eff;
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-:root {
-  --bgColor: #1b191f;
-  --lightgrey: #c4c4c4;
-  --grey: #a8a8a8;
-  --accent1: #b384ff;
-  --accent2: #873eff;
-}
-
 .App {
-  background: var(--bgColor);
+  background: $bgColor;
   color: white;
-  font-family: 'Lexend Exa', sans-serif;
+  font-family: $fontHead;
   width: 100%;
   overflow-x: hidden;
 }
@@ -44,7 +44,9 @@ section {
 
 nav {
   width: 100%;
-  position: absolute;
+  position: fixed;
+  top: 20px;
+  z-index: 5;
 
   ul {
     display: flex;
@@ -95,11 +97,57 @@ nav {
     }
   }
 
+  .info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    .socmed {
+      svg {
+        margin: 0 2rem;
+        fill: none;
+        color: $accent1;
+        height: max-content;
+      }
+
+      display: flex;
+      align-items: center;
+
+      .buttons {
+        justify-content: space-around;
+        width: fit-content;
+        svg {
+          fill: $lightgrey;
+          width: 80px;
+          cursor: pointer;
+          margin: 0;
+          padding: 1rem;
+          transition: fill ease 0.3s;
+        }
+
+        svg:hover {
+          fill: $accent2;
+        }
+      }
+
+      ul {
+        list-style: none;
+
+        li {
+          cursor: pointer;
+          font-size: 1.2rem;
+          padding: 0.2rem;
+        }
+      }
+    }
+  }
+
   h2 {
-    font-family: 'Roboto Mono', monospace;
+    font-family: $fontText;
     font-weight: normal;
     font-size: 1.2rem;
-    color: var(--grey);
+    color: $grey;
     white-space: pre-wrap;
     line-height: 1.8rem;
 
@@ -124,14 +172,14 @@ nav {
 
   p {
     position: relative;
-    color: var(--grey);
+    color: $grey;
     font-size: 1.2rem;
     font-family: 'Roboto Mono', monospace;
     width: 50%;
     margin-top: 1.2rem;
     margin-left: 1.3rem;
     padding: 1.2rem 2rem;
-    border-left: 4px solid var(--lightgrey);
+    border-left: 4px solid $lightgrey;
     z-index: 3;
   }
 
@@ -152,8 +200,8 @@ nav {
       }
 
       ul {
-        font-family: 'Roboto Mono', monospace;
-        color: var(--grey);
+        font-family: $fontText;
+        color: $grey;
         list-style: none;
 
         li {
@@ -181,7 +229,7 @@ nav {
 
     width: 400px;
     height: 400px;
-    border: 1px solid var(--lightgrey);
+    border: 1px solid $lightgrey;
     border-radius: 400px;
 
     a {
@@ -201,8 +249,8 @@ nav {
       z-index: 1;
       width: 400px;
       height: 400px;
-      background-color: var(--grey);
-      border: 80px solid var(--bgColor);
+      background-color: $grey;
+      border: 80px solid $bgColor;
       overflow: hidden;
 
       img {
@@ -239,37 +287,82 @@ nav {
       flex-direction: row-reverse;
     }
 
-    h2 {
-      text-transform: lowercase;
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+    .work-text {
+      width: 50%;
+
+      h2 {
+        text-transform: lowercase;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 1.5rem;
+        font-family: $fontText;
+        color: $grey;
+        margin-left: 4rem;
+        margin-bottom: 1rem;
+      }
+
+      .techstack {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
     }
 
-    p {
-      font-size: 1.5rem;
-      font-family: 'Roboto Mono', monospace;
-      color: var(--grey);
-      margin-left: 4rem;
-      margin-bottom: 1rem;
-    }
-
-    .techstack {
-      font-size: 1.2rem;
-      font-weight: bold;
-    }
-
-    .img-container {
+    .cta-wrapper {
       width: 60vw;
-      height: 10vw;
-      margin: 0 2rem;
-      background-color: var(--accent1);
-      overflow: hidden;
+      position: relative;
       cursor: pointer;
 
-      img {
-        width: 100%;
+      .cta {
+        opacity: 0;
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        left: -10%;
+        bottom: -60%;
+        z-index: 1;
+        transform: scale(0.8) skewX(-40deg);
+        transition: opacity 0.3s ease;
+
+        text {
+          font-size: 60px;
+          font-family: $fontHead;
+          text-transform: uppercase;
+          letter-spacing: 20px;
+          fill: white;
+        }
+      }
+
+      &:hover {
+        .cta {
+          opacity: 1;
+        }
+      }
+
+      .img-container {
+        height: 10vw;
+        margin: 0 2rem;
+        background-color: $accent1;
+        overflow: hidden;
         position: relative;
-        // bottom: 65%;
+
+        img {
+          width: 100%;
+          bottom: -50%;
+          position: absolute;
+        }
+      }
+    }
+
+    &:nth-child(odd) {
+      .cta-wrapper {
+        .cta {
+          left: auto;
+          right: -10%;
+          transform: scale(0.8) skewX(40deg);
+        }
       }
     }
   }
@@ -291,7 +384,7 @@ nav {
       content: '';
       width: 100%;
       height: 4px;
-      background-color: var(--accent2);
+      background-color: $accent2;
       position: absolute;
       left: 0;
       bottom: -10%;
@@ -312,10 +405,10 @@ nav {
   }
 
   .emphasis:nth-child(odd) {
-    color: var(--accent1);
+    color: $accent1;
   }
   .emphasis:nth-child(even) {
-    color: var(--accent2);
+    color: $accent2;
   }
 }
 
@@ -332,6 +425,9 @@ nav {
     ul {
       justify-content: center;
       font-size: 1rem;
+      li {
+        margin: 0;
+      }
     }
   }
 
@@ -405,25 +501,31 @@ nav {
         flex-direction: column-reverse;
       }
 
-      h2 {
-        font-size: 1.8rem;
-      }
-
-      p {
+      .work-text {
         width: 100%;
-        font-size: 1rem;
-        margin-left: 2rem;
+
+        h2 {
+          font-size: 1.8rem;
+        }
+
+        p {
+          width: 100%;
+          font-size: 1rem;
+          margin-left: 2rem;
+        }
+
+        .techstack {
+          font-size: 0.8rem;
+        }
       }
 
-      .techstack {
-        font-size: 0.8rem;
-      }
-
-      .img-container {
-        width: 100%;
-        height: 20vw;
-        bottom: 0%;
-        margin: 1rem 0;
+      .cta-wrapper {
+        .img-container {
+          width: 100%;
+          height: 20vw;
+          bottom: 0%;
+          margin: 1rem 0;
+        }
       }
     }
   }
