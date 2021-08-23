@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a75e0eec.chunk.css",
+    "main.js": "/static/js/main.a7ff7244.chunk.js",
+    "main.js.map": "/static/js/main.a7ff7244.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.37305ae3.js",
+    "runtime-main.js.map": "/static/js/runtime-main.37305ae3.js.map",
+    "static/js/2.36bc2c00.chunk.js": "/static/js/2.36bc2c00.chunk.js",
+    "static/js/2.36bc2c00.chunk.js.map": "/static/js/2.36bc2c00.chunk.js.map",
+    "static/js/3.e34b7425.chunk.js": "/static/js/3.e34b7425.chunk.js",
+    "static/js/3.e34b7425.chunk.js.map": "/static/js/3.e34b7425.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.a75e0eec.chunk.css.map": "/static/css/main.a75e0eec.chunk.css.map",
+    "static/js/2.36bc2c00.chunk.js.LICENSE.txt": "/static/js/2.36bc2c00.chunk.js.LICENSE.txt",
+    "static/media/arrow.ad71662c.svg": "/static/media/arrow.ad71662c.svg",
+    "static/media/cta.5e44b137.svg": "/static/media/cta.5e44b137.svg",
+    "static/media/App.scss": "/static/media/skills-deco.20299fc6.svg",
+    "static/media/facultype.png": "/static/media/facultype.ab6f370f.png",
+    "static/media/github.1e38d840.svg": "/static/media/github.1e38d840.svg",
+    "static/media/img1.jpg": "/static/media/img1.f5baaa9d.jpg",
+    "static/media/img2.jpg": "/static/media/img2.4138abb9.jpg",
+    "static/media/img3.jpg": "/static/media/img3.cde7bc75.jpg",
+    "static/media/img4.jpg": "/static/media/img4.cbc4dc7e.jpg",
+    "static/media/linkedin.c78bbeb6.svg": "/static/media/linkedin.c78bbeb6.svg",
+    "static/media/petsos.png": "/static/media/petsos.c993c29e.png",
+    "static/media/resume.63c9d0b2.svg": "/static/media/resume.63c9d0b2.svg",
+    "static/media/under attack.png": "/static/media/under attack.25f2e644.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.37305ae3.js",
+    "static/js/2.36bc2c00.chunk.js",
+    "static/css/main.a75e0eec.chunk.css",
+    "static/js/main.a7ff7244.chunk.js"
+  ]
+}
