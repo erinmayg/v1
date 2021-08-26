@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { ReactComponent as Eye } from '../svg/eye.svg';
 
 function About() {
   function importAll(r) {
@@ -46,6 +47,7 @@ function About() {
       </div>
 
       <div className='artwork'>
+        <Eye />
         <a
           href='https://instagram.com/slyth.erinnn'
           target='_blank'
