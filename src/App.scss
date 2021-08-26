@@ -12,12 +12,20 @@ $accent2: #873eff;
   box-sizing: border-box;
 }
 
+body {
+  overscroll-behavior-y: none;
+}
+
 .App {
   background: $bgColor;
   color: white;
   font-family: $fontHead;
   width: 100%;
   overflow-x: hidden;
+
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 a {
