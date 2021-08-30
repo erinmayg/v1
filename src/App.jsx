@@ -12,15 +12,15 @@ function App() {
   const app = useRef();
   const scrollContainer = useRef();
 
-  useEffect(() => {
-    document.body.style.height = `${
-      scrollContainer.current.getBoundingClientRect().height
-    }px`;
-  }, [size.height]);
+  // useEffect(() => {
+  //   document.body.style.height = `${
+  //     scrollContainer.current.getBoundingClientRect().height
+  //   }px`;
+  // }, [size.height]);
 
-  useEffect(() => {
-    requestAnimationFrame(() => skewScrolling());
-  });
+  // useEffect(() => {
+  //   requestAnimationFrame(() => skewScrolling());
+  // });
 
   const skewConfigs = {
     ease: 0.1,
@@ -48,6 +48,11 @@ function App() {
   return (
     <div ref={app} className='App'>
       <Nav />
+      <div className='contactInfo' aria-orientation='vertical'>
+        <a href='mailto:erinmayg@gmail.com' target='_blank' rel='noreferrer'>
+          erinmayg@gmail.com
+        </a>
+      </div>
       <div ref={scrollContainer} className='scroll'>
         <Home />
         <About />

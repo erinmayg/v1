@@ -1,5 +1,5 @@
 $fontHead: 'Lexend Exa', sans-serif;
-$fontText: 'Roboto Mono', monospace;
+$fontText: 'Fira Code', 'Roboto Mono', monospace;
 $bgColor: #1b191f;
 $lightgrey: #c4c4c4;
 $grey: #a8a8a8;
@@ -22,10 +22,56 @@ body {
   font-family: $fontHead;
   width: 100%;
   overflow-x: hidden;
+  position: relative;
 
+  /* Skew Scroll Properties */
+  // position: fixed;
+  // top: 0;
+  // left: 0;
+}
+
+.contactInfo {
+  width: 40px;
   position: fixed;
-  top: 0;
-  left: 0;
+  bottom: 0;
+  right: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 4;
+
+  a {
+    cursor: pointer;
+    color: $grey;
+    margin: 1rem;
+    padding: 1rem;
+
+    writing-mode: vertical-rl;
+    font-family: $fontText;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+
+    transition: all 0.3s ease;
+
+    &:hover,
+    &:focus {
+      color: $accent2;
+    }
+
+    &:focus {
+      border: $accent2 2px dashed;
+    }
+  }
+
+  &::after {
+    display: block;
+
+    content: '';
+    width: 1px;
+    height: 90px;
+    margin: 0 auto;
+    background: $grey;
+  }
 }
 
 a {
@@ -37,7 +83,8 @@ a {
 section {
   width: 100%;
   min-height: 100vh;
-  padding: 0rem 4rem;
+  padding: 0rem 8rem;
+  position: relative;
 
   h1 {
     font-size: 4rem;
@@ -50,13 +97,15 @@ section {
   }
 }
 
-nav {
+.nav {
   width: 100%;
   position: fixed;
   padding-top: 20px;
   padding-bottom: 80px;
   z-index: 5;
   background: linear-gradient($bgColor, rgba(0, 0, 0, 0));
+
+  transition: all 0.3s ease;
 
   ul {
     display: flex;
@@ -90,6 +139,10 @@ nav {
       }
     }
   }
+}
+
+.nav--hide {
+  transform: translateY(-100%);
 }
 
 #home {
@@ -183,7 +236,7 @@ nav {
     position: relative;
     color: $grey;
     font-size: 1.2rem;
-    font-family: 'Roboto Mono', monospace;
+    font-family: $fontText;
     width: 50%;
     margin-top: 1.2rem;
     margin-left: 1.3rem;
@@ -196,7 +249,7 @@ nav {
     display: flex;
     justify-items: flex-end;
     position: absolute;
-    right: 4rem;
+    right: 8rem;
     width: fit-content;
     overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -431,7 +484,7 @@ nav {
     }
   }
 
-  nav {
+  .nav {
     ul {
       justify-content: center;
       font-size: 1rem;
@@ -439,6 +492,10 @@ nav {
         margin: 0;
       }
     }
+  }
+
+  .contactInfo {
+    display: none;
   }
 
   #home {

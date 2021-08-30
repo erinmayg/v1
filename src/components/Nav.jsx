@@ -1,8 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 function Nav() {
+  const [hide, setHide] = useState([]);
+  const prevScroll = useRef(0);
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      console.log('prev: ' + prevScroll.current);
+      console.log('curr: ' + window.scrollY);
+      setHide(window.scrollY > prevScroll.current);
+      prevScroll.current = window.scrollY;
+    });
+
+    return () => {
+      window.removeEventListener('scroll');
+    };
+  }, []);
+
   return (
-    <nav>
+    <nav ref={prevScroll} className={`nav ${hide && 'nav--hide'}`}>
       <ul>
         <li>
           <a href='/#about'>About</a>
