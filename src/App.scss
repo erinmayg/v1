@@ -30,6 +30,12 @@ body {
   // left: 0;
 }
 
+::selection,
+::-moz-selection {
+  background: $accent2;
+  color: white !important;
+}
+
 .contactInfo {
   width: 40px;
   position: fixed;
