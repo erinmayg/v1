@@ -20,6 +20,20 @@ html {
 
 body {
   overscroll-behavior-y: none;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $darkaccent;
+    border: 3px solid $bgColor;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $bgColor;
+  }
 }
 
 .App {
