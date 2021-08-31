@@ -82,7 +82,9 @@ section {
 
 footer {
   margin: 1rem 0;
+  height: 60px;
   display: flex;
+  align-items: center;
   justify-content: center;
 
   a {
@@ -253,7 +255,7 @@ footer {
     text-transform: none;
 
     &::after {
-      content: '';
+      content: none;
     }
   }
 

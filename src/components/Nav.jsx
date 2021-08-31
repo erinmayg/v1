@@ -1,14 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 function Nav() {
-  const [hide, setHide] = useState([]);
+  const [hide, setHide] = useState(false);
   const prevScroll = useRef(0);
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      console.log('prev: ' + prevScroll.current);
-      console.log('curr: ' + window.scrollY);
-      setHide(window.scrollY > prevScroll.current);
+      setHide(window.scrollY !== 0 && window.scrollY > prevScroll.current);
       prevScroll.current = window.scrollY;
     });
 
