@@ -3,6 +3,7 @@ $fontText: 'Fira Code', 'Roboto Mono', monospace;
 $bgColor: #1b191f;
 $lightgrey: #c4c4c4;
 $grey: #a8a8a8;
+$darkaccent: #514970;
 $accent1: #b384ff;
 $accent2: #873eff;
 
@@ -10,6 +11,11 @@ $accent2: #873eff;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: $darkaccent $bgColor;
 }
 
 body {
