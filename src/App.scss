@@ -80,6 +80,49 @@ body {
   }
 }
 
+.socmed-deco {
+  width: 40px;
+  position: fixed;
+  bottom: 0;
+  left: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 4;
+
+  a {
+    cursor: pointer;
+    color: $grey;
+    padding: 10px;
+
+    transition: all 0.3s ease;
+
+    svg {
+      width: 20px;
+    }
+
+    &:hover,
+    &:focus {
+      color: $accent2;
+    }
+
+    &:focus {
+      border: $accent2 2px dashed;
+    }
+  }
+
+  &::after {
+    display: block;
+
+    content: '';
+    width: 1px;
+    height: 90px;
+    margin: 0 auto;
+    margin-top: 1rem;
+    background: $grey;
+  }
+}
+
 a {
   text-decoration: none;
   color: white;
@@ -89,7 +132,8 @@ a {
 section {
   width: 100%;
   min-height: 100vh;
-  padding: 0rem 8rem;
+  margin: 0 auto;
+  max-width: 75vw;
   position: relative;
 
   h1 {
@@ -255,7 +299,7 @@ section {
     display: flex;
     justify-items: flex-end;
     position: absolute;
-    right: 8rem;
+    right: 0;
     width: fit-content;
     overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -350,7 +394,7 @@ section {
     align-items: center;
     justify-content: center;
 
-    padding: 2rem 4rem;
+    padding: 3rem 0;
 
     &:nth-child(odd) {
       flex-direction: row-reverse;
@@ -361,12 +405,12 @@ section {
 
       h2 {
         text-transform: lowercase;
-        font-size: 2.5rem;
+        font-size: 2.2rem;
         margin-bottom: 1rem;
       }
 
       p {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         font-family: $fontText;
         color: $grey;
         margin-left: 4rem;
@@ -374,8 +418,9 @@ section {
       }
 
       .techstack {
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-weight: bold;
+        color: $accent1;
       }
     }
 
@@ -483,6 +528,7 @@ section {
 
 @media screen and (max-width: 768px) {
   section {
+    max-width: fit-content;
     padding: 0 2rem;
 
     h1 {
@@ -500,6 +546,7 @@ section {
     }
   }
 
+  .socmed-deco,
   .contactInfo {
     display: none;
   }

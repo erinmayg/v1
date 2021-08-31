@@ -6,6 +6,9 @@ import About from './components/About';
 import Works from './components/Works';
 import Contact from './components/Contact';
 import './App.scss';
+import { ReactComponent as Git } from './svg/socmed/github.svg';
+import { ReactComponent as Insta } from './svg/socmed/ig.svg';
+import { ReactComponent as Link } from './svg/socmed/linkedin.svg';
 
 function App() {
   const size = useWindowSize();
@@ -48,6 +51,25 @@ function App() {
   return (
     <div ref={app} className='App'>
       <Nav />
+      <div className='socmed-deco' aria-orientation='vertical'>
+        <a href='https://github.com/erinmayg' target='_blank' rel='noreferrer'>
+          <Git />
+        </a>
+        <a
+          href='https://instagram.com/erinmayg'
+          target='_blank'
+          rel='noreferrer'
+        >
+          <Insta />
+        </a>
+        <a
+          href='https://linkedin.com/in/erinmayg'
+          target='_blank'
+          rel='noreferrer'
+        >
+          <Link />
+        </a>
+      </div>
       <div className='contactInfo' aria-orientation='vertical'>
         <a href='mailto:erinmayg@gmail.com' target='_blank' rel='noreferrer'>
           erinmayg@gmail.com
