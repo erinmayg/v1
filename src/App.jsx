@@ -50,7 +50,9 @@ function App() {
 
   return (
     <div ref={app} className='App'>
-      <Nav />
+      <header>
+        <Nav />
+      </header>
       <div className='socmed-deco' aria-orientation='vertical'>
         <a href='https://github.com/erinmayg' target='_blank' rel='noreferrer'>
           <Git />
@@ -81,6 +83,15 @@ function App() {
         <Works />
         <Contact />
       </div>
+      <footer>
+        <a
+          href='https://github.com/erinmayg/erinmayg.github.io'
+          target='_blank'
+          rel='noreferrer'
+        >
+          Designed and Built by Erin May
+        </a>
+      </footer>
     </div>
   );
 }
