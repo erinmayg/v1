@@ -54,7 +54,7 @@ function Works() {
           <Cta />
           <div className='img-container'>
             <img
-              src={images[project.title.toLowerCase() + '.png'].default}
+              src={images[project.title.toLowerCase() + '.png']}
               alt={project.title}
             />
           </div>

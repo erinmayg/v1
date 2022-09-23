@@ -56,7 +56,7 @@ function About() {
           See my paintings
         </a>
         <div className='slideshow'>
-          <img src={images['img' + (idx + 1) + '.jpg'].default} alt='' />
+          <img src={images['img' + (idx + 1) + '.jpg']} alt='' />
         </div>
       </div>
     </section>
