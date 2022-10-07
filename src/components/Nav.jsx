@@ -19,13 +19,13 @@ function Nav() {
     <nav ref={prevScroll} className={`nav ${hide && 'nav--hide'}`}>
       <ul>
         <li>
-          <a href='/#about'>About</a>
+          <a href='/v1/#about'>About</a>
         </li>
         <li>
-          <a href='/#works'>Works</a>
+          <a href='/v1/#works'>Works</a>
         </li>
         <li>
-          <a href='/#contact'>Contact Me</a>
+          <a href='/v1/#contact'>Contact Me</a>
         </li>
       </ul>
     </nav>
