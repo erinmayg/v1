@@ -311,14 +311,6 @@ footer {
     color: $grey;
     white-space: pre-wrap;
     line-height: 1.8rem;
-
-    &::before {
-      content: '/*\a';
-    }
-
-    &::after {
-      content: '\a*/';
-    }
   }
 }
 
